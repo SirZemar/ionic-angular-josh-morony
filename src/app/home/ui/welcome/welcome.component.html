@@ -1,0 +1,5 @@
+<p>Hello {{name}} </p>
+<div>
+  <label for="elementRef" >Input with element ref: </label>
+  <input name="elementRef" #inputElementRef [value]="name" (input)="onChange($event)"/>
+</div>
