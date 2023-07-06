@@ -21,10 +21,4 @@ describe('WelcomeComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  xit('should render template with context greeting'),
-    () => {
-      const templateContext =
-        fixture.debugElement.nativeElement.querySelector('#greetings');
-      console.log(templateContext);
-    };
 });
