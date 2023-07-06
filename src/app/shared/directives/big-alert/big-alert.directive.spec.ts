@@ -1,7 +1,8 @@
+import { Directive } from '@angular/core';
 import { BigAlertDirective } from './big-alert.directive';
 
 describe('BigAlertDirective', () => {
-  let directive = {};
+  let directive: Directive;
 
   beforeEach(() => {
     directive = new BigAlertDirective();
