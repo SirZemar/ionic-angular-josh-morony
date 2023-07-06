@@ -8,7 +8,7 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.componnent';
 import { SettingsComponent } from './settings/settings.component';
 import { WelcomeComponent } from './home/ui/welcome/welcome.component';
-import { BigAlertDirective } from './directives/big-alert/big-alert.directive';
+import { SharedModule } from './shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -16,9 +16,8 @@ import { BigAlertDirective } from './directives/big-alert/big-alert.directive';
     HomeComponent,
     SettingsComponent,
     WelcomeComponent,
-    BigAlertDirective,
   ],
-  imports: [BrowserModule, AppRoutingModule, FormsModule],
+  imports: [BrowserModule, AppRoutingModule, FormsModule, SharedModule],
   providers: [],
   bootstrap: [AppComponent],
 })
