@@ -6,6 +6,6 @@ import { ReversePipe } from './pipes/reverse.pipe';
 @NgModule({
   declarations: [BigAlertDirective, ReversePipe],
   imports: [CommonModule],
-  exports: [BigAlertDirective],
+  exports: [BigAlertDirective, ReversePipe],
 })
 export class SharedModule {}

@@ -1,5 +1,7 @@
 <!-- <ng-container *ngTemplateOutlet="myTemplate; context: {greeting: 'Hi'}"></ng-container> -->
 <ng-container *ngTemplateOutlet="myTemplate"></ng-container>
+<p>Do you accept our yummy cookies?</p>
+<button (click)='cookiesAccepted.emit(true)'>I do</button>
 
 <ng-template #myTemplate let-greeting="greeting">
   <p appBigAlert>{{greeting ? greeting: "Hello" }} {{name}} </p>
@@ -12,3 +14,4 @@
     <input name="twoWayBinding" id="twoWayBinding" [value]="name" [(ngModel)]="name"/>
   </div>
 </ng-template>
+

@@ -1,2 +1,3 @@
-<app-welcome></app-welcome>
+<app-welcome [name]="user.name" (cookiesAccepted)="handleCookies()"></app-welcome>
 <p>I am the home component!</p>
+<p> {{'I am the home component but with reverse pipe!' | reverse }}</p>

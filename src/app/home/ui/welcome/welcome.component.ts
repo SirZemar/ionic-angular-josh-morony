@@ -1,4 +1,12 @@
-import { Component, ElementRef, ViewChild, isDevMode } from '@angular/core';
+import {
+  Component,
+  ElementRef,
+  EventEmitter,
+  Input,
+  Output,
+  ViewChild,
+  isDevMode,
+} from '@angular/core';
 import { environment } from '@environment/dev';
 
 @Component({
@@ -7,7 +15,9 @@ import { environment } from '@environment/dev';
   styleUrls: ['./welcome.component.scss'],
 })
 export class WelcomeComponent {
-  name = 'Eduardo';
+  @Input() name = '';
+  @Output() cookiesAccepted = new EventEmitter();
+
   @ViewChild('inputElementRef') inputElementRef: ElementRef | undefined;
 
   constructor() {}
