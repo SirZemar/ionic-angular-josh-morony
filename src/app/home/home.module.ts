@@ -2,9 +2,8 @@ import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { HomeComponent } from './home.componnent';
 import { NgModule } from '@angular/core';
-import { WelcomeComponent } from './ui/welcome/welcome.component';
 import { SharedModule } from '../shared/shared.module';
-import { FormsModule } from '@angular/forms';
+import { WelcomeComponentModule } from './ui/welcome/welcome.component';
 
 @NgModule({
   imports: [
@@ -16,8 +15,8 @@ import { FormsModule } from '@angular/forms';
       },
     ]),
     SharedModule,
-    FormsModule,
+    WelcomeComponentModule,
   ],
-  declarations: [HomeComponent, WelcomeComponent],
+  declarations: [HomeComponent],
 })
 export class HomeModule {}

@@ -3,12 +3,21 @@ import {
   ElementRef,
   EventEmitter,
   Input,
+  NgModule,
   Output,
   ViewChild,
   isDevMode,
 } from '@angular/core';
 import { environment } from '@environment/dev';
+import { FakeDataService } from 'src/app/shared/services/fake-data.service';
+import { FormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
+import { SharedModule } from 'src/app/shared/shared.module';
 
+interface FakeData {
+  name: string;
+  age: number;
+}
 @Component({
   selector: 'app-welcome',
   templateUrl: './welcome.component.html',
@@ -20,7 +29,10 @@ export class WelcomeComponent {
 
   @ViewChild('inputElementRef') inputElementRef: ElementRef | undefined;
 
-  constructor() {}
+  data = {} as FakeData;
+  constructor(fakeDataService: FakeDataService) {
+    this.data = fakeDataService.data;
+  }
 
   onChange(ev: Event) {
     try {
@@ -41,3 +53,10 @@ export class WelcomeComponent {
     this.name = this.inputElementRef?.nativeElement.value;
   }
 }
+
+@NgModule({
+  declarations: [WelcomeComponent],
+  exports: [WelcomeComponent],
+  imports: [FormsModule, CommonModule, SharedModule],
+})
+export class WelcomeComponentModule {}
